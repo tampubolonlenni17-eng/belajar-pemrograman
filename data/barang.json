@@ -1,0 +1,5 @@
+[
+  { "id": 1, "nama": "Buku Tulis", "kategori": "Alat Tulis", "harga": 5000, "stok": 120 },
+  { "id": 2, "nama": "Pensil 2B", "kategori": "Alat Tulis", "harga": 3000, "stok": 0 },
+  { "id": 3, "nama": "Air Mineral 600ml", "kategori": "Minuman", "harga": 4000, "stok": 48 }
+]
