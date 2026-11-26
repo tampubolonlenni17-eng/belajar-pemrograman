@@ -1,21 +1,48 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Boxes, PackageX, Pencil, Trash2, TriangleAlert, Wallet } from "lucide-react";
 import FormBarang from "./FormBarang";
+import KontrolDaftar from "./KontrolDaftar";
+import Paginasi from "./Paginasi";
+import Tombol from "./Tombol";
 import DialogKonfirmasi from "./DialogKonfirmasi";
 import KartuStatistik from "./KartuStatistik";
 import LabelStok from "./LabelStok";
 import TabelData from "./TabelData";
 import { ringkasanStok, tambahBarang, ubahBarang, hapusBarang } from "@/lib/barang";
 import { formatRupiah } from "@/lib/format";
+import { terapkanKueri } from "@/lib/kueri";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useDebounce } from "@/hooks/useDebounce";
+
+const KUERI_AWAL = { kata: "", kategori: "", urut: "nama-naik", halaman: 1 };
 
 export default function ManajemenBarang({ barangAwal }) {
-  const [daftar, setDaftar] = useState(barangAwal);
+  const [daftar, setDaftar] = useLocalStorage("inventaris:barang", barangAwal);
   const [diedit, setDiedit] = useState(null);
   const [akanDihapus, setAkanDihapus] = useState(null);
   const [pesan, setPesan] = useState("");
+  const [kueri, setKueri] = useState(KUERI_AWAL);
 
-  const ringkas = ringkasanStok(daftar); // dihitung, bukan disimpan di state
+  const kataTunda = useDebounce(kueri.kata, 300);
+
+  const ringkas = ringkasanStok(daftar); // dihitung dari seluruh daftar
+  const hasil = terapkanKueri(daftar, { ...kueri, kata: kataTunda });
+
+  // Judul tab browser mengikuti jumlah barang
+  useEffect(() => {
+    document.title = `Inventaris (${daftar.length} barang)`;
+  }, [daftar.length]);
+
+  // Mengubah filter selalu kembali ke halaman 1; pindah halaman hanya mengubah halaman
+  const ubahKueri = (perubahan) => setKueri((lama) => ({ ...lama, ...perubahan, halaman: 1 }));
+  const pindahHalaman = (h) => setKueri((lama) => ({ ...lama, halaman: h }));
+
+  function kembalikanDataAwal() {
+    setDaftar(barangAwal);
+    setKueri(KUERI_AWAL);
+    setPesan("Data dikembalikan ke 12 barang awal.");
+  }
 
   function simpan(isian) {
     if (diedit) {
@@ -88,7 +115,30 @@ export default function ManajemenBarang({ barangAwal }) {
         </p>
       )}
 
-      <TabelData kolom={kolom} data={daftar} pesanKosong="Belum ada barang. Tambahkan lewat form di atas." />
+      <KontrolDaftar kueri={kueri} onUbah={ubahKueri} />
+
+      <p className="text-sm text-slate-600" aria-live="polite">
+        {hasil.total === daftar.length
+          ? `${hasil.total} barang`
+          : `${hasil.total} dari ${daftar.length} barang cocok`}
+      </p>
+
+      <TabelData
+        kolom={kolom}
+        data={hasil.data}
+        pesanKosong={
+          daftar.length === 0
+            ? "Belum ada barang. Tambahkan lewat form di atas."
+            : "Tidak ada barang yang cocok dengan pencarian."
+        }
+      />
+
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <Paginasi halaman={hasil.halaman} totalHalaman={hasil.totalHalaman} onPindah={pindahHalaman} />
+        <Tombol varian="garis" type="button" onClick={kembalikanDataAwal}>
+          Kembalikan data awal
+        </Tombol>
+      </div>
 
       {akanDihapus && (
         <DialogKonfirmasi
