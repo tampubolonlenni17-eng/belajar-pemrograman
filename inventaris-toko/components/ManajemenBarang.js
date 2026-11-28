@@ -97,7 +97,12 @@ export default function ManajemenBarang({ barangAwal }) {
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <KartuStatistik label="Jenis barang" nilai={ringkas.jumlahJenis} ikon={Boxes} />
         <KartuStatistik label="Nilai persediaan" nilai={formatRupiah(ringkas.nilaiPersediaan)} ikon={Wallet} />
-        <KartuStatistik label="Stok menipis" nilai={ringkas.menipis} ikon={TriangleAlert} peringatan={ringkas.menipis > 0} />
+        <KartuStatistik
+          label="Stok menipis"
+          nilai={ringkas.menipis}
+          ikon={TriangleAlert}
+          peringatan={ringkas.menipis > 0}
+        />
         <KartuStatistik label="Stok habis" nilai={ringkas.habis} ikon={PackageX} peringatan={ringkas.habis > 0} />
       </div>
 
@@ -118,9 +123,7 @@ export default function ManajemenBarang({ barangAwal }) {
       <KontrolDaftar kueri={kueri} onUbah={ubahKueri} />
 
       <p className="text-sm text-slate-600" aria-live="polite">
-        {hasil.total === daftar.length
-          ? `${hasil.total} barang`
-          : `${hasil.total} dari ${daftar.length} barang cocok`}
+        {hasil.total === daftar.length ? `${hasil.total} barang` : `${hasil.total} dari ${daftar.length} barang cocok`}
       </p>
 
       <TabelData

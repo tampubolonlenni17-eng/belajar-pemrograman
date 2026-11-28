@@ -17,7 +17,7 @@ export function KeranjangProvider({ children }) {
 
   const nilai = useMemo(
     () => ({ item: state.item, ringkasan, tambah, ubahJumlah, hapus, kosongkan }),
-    [state.item, ringkasan, tambah, ubahJumlah, hapus, kosongkan]
+    [state.item, ringkasan, tambah, ubahJumlah, hapus, kosongkan],
   );
 
   return <KeranjangContext value={nilai}>{children}</KeranjangContext>;

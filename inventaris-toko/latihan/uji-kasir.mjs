@@ -6,7 +6,11 @@ let s = KERANJANG_AWAL;
 s = r(s, { type: "tambah", barang: b(12) });
 s = r(s, { type: "tambah", barang: b(12) });
 s = r(s, { type: "tambah", barang: b(2) }); // stok 0
-console.log("A", s.item.map((i) => [i.nama, i.jumlah]), hitungRingkasan(s.item));
+console.log(
+  "A",
+  s.item.map((i) => [i.nama, i.jumlah]),
+  hitungRingkasan(s.item),
+);
 
 s = r(s, { type: "ubahJumlah", id: 12, jumlah: 4 });
 s = r(s, { type: "tambah", barang: b(7) });
@@ -30,7 +34,7 @@ console.log(
   "G",
   r(s, { type: "ubahJumlah", id: 7, jumlah: 0 }).item.length,
   r(s, { type: "hapus", id: 12 }).item.length,
-  r(s, { type: "kosongkan" }).item.length
+  r(s, { type: "kosongkan" }).item.length,
 );
 
 try {
@@ -41,13 +45,10 @@ try {
 
 console.log("I", [49999, 50000, 99999, 100000, 199999, 200000].map(persenDiskon));
 
-const s2 = r(
-  r(KERANJANG_AWAL, { type: "tambah", barang: b(3) }),
-  { type: "ubahJumlah", id: 3, jumlah: 3 }
-);
+const s2 = r(r(KERANJANG_AWAL, { type: "tambah", barang: b(3) }), { type: "ubahJumlah", id: 3, jumlah: 3 });
 console.log(
   "J",
   hitungRingkasan(s2.item),
   kurangiStok(d, s2.item).find((x) => x.id === 3).stok,
-  d.find((x) => x.id === 3).stok
+  d.find((x) => x.id === 3).stok,
 );

@@ -1,8 +1,9 @@
-// lib/skema.js — skema validasi dengan Zod.
+// lib/skema.js — skema validasi dengan Zod. Dipakai di form klien (P7) dan nanti di server (P11, P14).
 
 import { z } from "zod";
 import { KATEGORI } from "./data-barang.js";
 
+/** Skema data barang dari form; harga dan stok diubah menjadi angka. */
 export const skemaBarang = z.object({
   kode: z
     .string()
@@ -22,8 +23,14 @@ export const skemaBarang = z.object({
   satuan: z.string().trim().min(1, "Satuan wajib diisi."),
 });
 
+/** Metode pembayaran yang diterima kasir. */
 export const METODE_BAYAR = ["tunai", "qris"];
 
+/**
+ * Buat skema pembayaran. Bergantung pada total belanja, jadi dibuat lewat fungsi.
+ * @param {number} total Total yang harus dibayar
+ * @returns {import("zod").ZodType} Skema Zod untuk {pelanggan, metode, bayar}
+ */
 export function buatSkemaPembayaran(total) {
   return z
     .object({
@@ -40,6 +47,11 @@ export function buatSkemaPembayaran(total) {
     });
 }
 
+/**
+ * Ubah daftar issue Zod menjadi objek { namaKolom: pesan } (pesan pertama per kolom).
+ * @param {{success:boolean, error?:{issues:Array<{path:Array<string|number>, message:string}>}}} hasil Hasil safeParse
+ * @returns {Record<string, string>} Objek kosong jika valid
+ */
 export function galatPerKolom(hasil) {
   if (hasil.success) return {};
   const galat = {};

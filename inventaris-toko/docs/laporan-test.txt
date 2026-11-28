@@ -1,0 +1,139 @@
+
+ RUN  v5.1.2 C:/Users/ASUS TUF/Pelatihan node.js/belajar-pemrograman/inventaris-toko
+
+ ✓ __tests__/algoritma.test.js > pencarian > linearSearch menemukan indeks dan menghitung langkah 6ms
+ ✓ __tests__/algoritma.test.js > pencarian > linearSearch tidak ketemu → -1 setelah memeriksa semua 1ms
+ ✓ __tests__/algoritma.test.js > pencarian > binarySearch(42) → indeks 5 1ms
+ ✓ __tests__/algoritma.test.js > pencarian > binarySearch(3) → indeks 0 1ms
+ ✓ __tests__/algoritma.test.js > pencarian > binarySearch(91) → indeks 9 1ms
+ ✓ __tests__/algoritma.test.js > pencarian > binarySearch paling banyak ⌈log2(n+1)⌉ langkah 1ms
+ ✓ __tests__/algoritma.test.js > pencarian > binarySearch pada array kosong 1ms
+ ✓ __tests__/algoritma.test.js > bubbleSort > mengurutkan naik termasuk nilai kembar dan negatif 1ms
+ ✓ __tests__/algoritma.test.js > bubbleSort > tidak mengubah array masukan 1ms
+ ✓ __tests__/algoritma.test.js > bubbleSort > array kosong dan satu elemen 1ms
+ ✓ __tests__/algoritma.test.js > selectionSort > mengurutkan naik termasuk nilai kembar dan negatif 1ms
+ ✓ __tests__/algoritma.test.js > selectionSort > tidak mengubah array masukan 0ms
+ ✓ __tests__/algoritma.test.js > selectionSort > array kosong dan satu elemen 0ms
+ ✓ __tests__/algoritma.test.js > insertionSort > mengurutkan naik termasuk nilai kembar dan negatif 0ms
+ ✓ __tests__/algoritma.test.js > insertionSort > tidak mengubah array masukan 0ms
+ ✓ __tests__/algoritma.test.js > insertionSort > array kosong dan satu elemen 0ms
+ ✓ __tests__/algoritma.test.js > kasus terbaik > bubbleSort pada data terurut berhenti setelah 1 putaran (n − 1 perbandingan) 0ms
+ ✓ __tests__/algoritma.test.js > kasus terbaik > selectionSort selalu n(n − 1)/2 perbandingan 0ms
+ ✓ __tests__/algoritma.test.js > urutkanBerdasarkan > mengurutkan objek berdasarkan kolom angka dan stabil untuk nilai sama 0ms
+ ✓ latihan/berbug.test.js > latihan berbug > hitungSubtotal menjumlah harga × jumlah 5ms
+ ✓ latihan/berbug.test.js > latihan berbug > hitungSubtotal keranjang kosong = 0 1ms
+ ✓ latihan/berbug.test.js > latihan berbug > persenDiskonSederhana(49999) = 0 1ms
+ ✓ latihan/berbug.test.js > latihan berbug > persenDiskonSederhana(50000) = 5 0ms
+ ✓ latihan/berbug.test.js > latihan berbug > persenDiskonSederhana(100000) = 10 0ms
+ ✓ latihan/berbug.test.js > latihan berbug > rataRataHarga 1ms
+ ✓ latihan/berbug.test.js > latihan berbug > rataRataHarga daftar kosong = 0 0ms
+ ✓ latihan/berbug.test.js > latihan berbug > cariNama tidak peka huruf besar/kecil 2ms
+ ✓ latihan/berbug.test.js > latihan berbug > jumlahHalaman(12, 5) = 3 1ms
+ ✓ latihan/berbug.test.js > latihan berbug > jumlahHalaman(10, 5) = 2 0ms
+ ✓ latihan/berbug.test.js > latihan berbug > jumlahHalaman(0, 5) = 1 1ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > bawaan: urut nama, 5 per halaman, 3 halaman 23ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > halaman terakhir berisi sisa data 1ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > pencarian tidak peka huruf besar/kecil 0ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > pencarian juga mencocokkan kode 1ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > filter kategori + urut harga termahal 1ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > tidak ada yang cocok: total 0, tetap 1 halaman 1ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > halaman 0 di luar batas dikoreksi menjadi 1 0ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > halaman -2 di luar batas dikoreksi menjadi 1 0ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > halaman 9 di luar batas dikoreksi menjadi 3 0ms
+ ✓ __tests__/kueri.test.js > terapkanKueri > tidak mengubah urutan array asli 1ms
+ ✓ __tests__/kueri.test.js > pilihan urut yang belum teruji (ditemukan dari laporan coverage) > harga-naik: termurah lebih dulu 0ms
+ ✓ __tests__/kueri.test.js > pilihan urut yang belum teruji (ditemukan dari laporan coverage) > stok-naik: stok paling sedikit lebih dulu 1ms
+ ✓ __tests__/kueri.test.js > pilihan urut yang belum teruji (ditemukan dari laporan coverage) > urut yang tidak dikenal kembali ke nama A–Z 0ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > menambah barang baru dengan jumlah 1 8ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > menambah barang yang sama menaikkan jumlah, bukan baris baru 1ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > mengabaikan barang dengan stok 0 1ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > tidak menambah melebihi stok 0ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > ubahJumlah membatasi jumlah sampai stok 1ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > ubahJumlah dengan 0 menghapus baris 0ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > ubahJumlah dengan -3 menghapus baris 0ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > ubahJumlah dengan "" menghapus baris 0ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > ubahJumlah dengan "abc" menghapus baris 0ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > ubahJumlah menerima teks angka dari input 0ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > hapus hanya menghapus barang yang dimaksud 1ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > kosongkan mengembalikan keranjang awal 0ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > tidak mengubah state lama (immutable) 9ms
+ ✓ __tests__/keranjang.test.js > keranjangReducer > melempar galat untuk aksi yang tidak dikenal 2ms
+ ✓ __tests__/keranjang.test.js > persenDiskon (nilai batas) > subtotal 0 mendapat diskon 0% undefined 0ms
+ ✓ __tests__/keranjang.test.js > persenDiskon (nilai batas) > subtotal 49999 mendapat diskon 0% undefined 1ms
+ ✓ __tests__/keranjang.test.js > persenDiskon (nilai batas) > subtotal 50000 mendapat diskon 5% undefined 0ms
+ ✓ __tests__/keranjang.test.js > persenDiskon (nilai batas) > subtotal 99999 mendapat diskon 5% undefined 0ms
+ ✓ __tests__/keranjang.test.js > persenDiskon (nilai batas) > subtotal 100000 mendapat diskon 10% undefined 0ms
+ ✓ __tests__/keranjang.test.js > persenDiskon (nilai batas) > subtotal 199999 mendapat diskon 10% undefined 0ms
+ ✓ __tests__/keranjang.test.js > persenDiskon (nilai batas) > subtotal 200000 mendapat diskon 15% undefined 0ms
+ ✓ __tests__/keranjang.test.js > persenDiskon (nilai batas) > subtotal 1000000 mendapat diskon 15% undefined 0ms
+ ✓ __tests__/keranjang.test.js > hitungRingkasan > keranjang kosong bernilai nol 1ms
+ ✓ __tests__/keranjang.test.js > hitungRingkasan > 2 sabun + 0 air: subtotal 30000, diskon 0, total 30000 3ms
+ ✓ __tests__/keranjang.test.js > hitungRingkasan > 4 sabun + 1 air: subtotal 64000, diskon 3200, total 60800 4ms
+ ✓ __tests__/keranjang.test.js > hitungRingkasan > 7 sabun + 1 air: subtotal 109000, diskon 10900, total 98100 1ms
+ ✓ __tests__/keranjang.test.js > hitungRingkasan > 14 sabun + 2 air: subtotal 218000, diskon 32700, total 185300 1ms
+ ✓ __tests__/keranjang.test.js > hitungRingkasan > membulatkan diskon ke rupiah terdekat 0ms
+ ✓ __tests__/keranjang.test.js > kurangiStok > mengurangi stok barang yang dibeli dan tidak menyentuh data asli 1ms
+ ✓ __tests__/keranjang.test.js > menujuDiskonBerikutnya > subtotal 30000 → {"kurang":20000,"persen":5} 0ms
+ ✓ __tests__/keranjang.test.js > menujuDiskonBerikutnya > subtotal 64000 → {"kurang":36000,"persen":10} 0ms
+ ✓ __tests__/keranjang.test.js > menujuDiskonBerikutnya > subtotal 150000 → {"kurang":50000,"persen":15} 1ms
+ ✓ __tests__/keranjang.test.js > menujuDiskonBerikutnya > subtotal 200000 → null 0ms
+ ✓ __tests__/hooks.test.js > useDebounce > baru memperbarui nilai setelah jeda tanpa perubahan 45ms
+ ✓ __tests__/hooks.test.js > useLocalStorage > memakai nilai awal lalu menyimpan perubahan sebagai JSON 12ms
+ ✓ __tests__/hooks.test.js > useLocalStorage > membaca nilai yang sudah tersimpan 24ms
+ ✓ __tests__/hooks.test.js > useLocalStorage > JSON rusak di localStorage → kembali ke nilai awal 6ms
+ ✓ __tests__/barang.test.js > statusStok (batas menipis = 10) > stok 0 → habis 5ms
+ ✓ __tests__/barang.test.js > statusStok (batas menipis = 10) > stok 1 → menipis 1ms
+ ✓ __tests__/barang.test.js > statusStok (batas menipis = 10) > stok 9 → menipis 0ms
+ ✓ __tests__/barang.test.js > statusStok (batas menipis = 10) > stok 10 → tersedia 0ms
+ ✓ __tests__/barang.test.js > statusStok (batas menipis = 10) > stok 120 → tersedia 0ms
+ ✓ __tests__/barang.test.js > ringkasanStok > menghitung statistik 12 barang contoh 2ms
+ ✓ __tests__/barang.test.js > ringkasanStok > daftar kosong bernilai nol semua 1ms
+ ✓ __tests__/barang.test.js > kelompokkanPerKategori > membagi 12 barang ke 4 kategori, masing-masing 3 1ms
+ ✓ __tests__/barang.test.js > tambah, ubah, hapus barang > tambahBarang memberi id berikutnya dan merapikan tipe 3ms
+ ✓ __tests__/barang.test.js > tambah, ubah, hapus barang > tambahBarang pada daftar kosong memberi id 1 1ms
+ ✓ __tests__/barang.test.js > tambah, ubah, hapus barang > ubahBarang hanya mengganti barang dengan id itu 2ms
+ ✓ __tests__/barang.test.js > tambah, ubah, hapus barang > hapusBarang mengembalikan array baru tanpa barang itu 1ms
+ ✓ __tests__/barang.test.js > validasiBarang > data valid tidak punya galat 1ms
+ ✓ __tests__/barang.test.js > validasiBarang > kode yang sudah dipakai ditolak 1ms
+ ✓ __tests__/barang.test.js > validasiBarang > saat edit, barang boleh memakai kodenya sendiri 1ms
+ ✓ __tests__/barang.test.js > validasiBarang > semua kolom kosong menghasilkan 6 galat 1ms
+ ✓ __tests__/barang.test.js > formatRupiah > 15000 → Rp 15.000 109ms
+ ✓ __tests__/barang.test.js > formatRupiah > 2425000 → Rp 2.425.000 1ms
+ ✓ __tests__/barang.test.js > formatRupiah > 0 → Rp 0 0ms
+ ✓ __tests__/skema.test.js > skemaBarang > menerima data valid dan mengubah harga/stok menjadi angka 7ms
+ ✓ __tests__/skema.test.js > skemaBarang > membuang spasi di tepi teks 1ms
+ ✓ __tests__/skema.test.js > skemaBarang > menolak kode = "atk-004" dengan pesan "Format kode" 2ms
+ ✓ __tests__/skema.test.js > skemaBarang > menolak kode = "ATK-4" dengan pesan "Format kode" 1ms
+ ✓ __tests__/skema.test.js > skemaBarang > menolak nama = "Pe" dengan pesan "minimal 3" 0ms
+ ✓ __tests__/skema.test.js > skemaBarang > menolak kategori = "Elektronik" dengan pesan "Pilih kategori" 0ms
+ ✓ __tests__/skema.test.js > skemaBarang > menolak harga = "0" dengan pesan "lebih dari 0" 0ms
+ ✓ __tests__/skema.test.js > skemaBarang > menolak harga = "7500.5" dengan pesan "bilangan bulat" 0ms
+ ✓ __tests__/skema.test.js > skemaBarang > menolak stok = "-1" dengan pesan "tidak boleh negatif" 0ms
+ ✓ __tests__/skema.test.js > skemaBarang > menolak satuan = " " dengan pesan "wajib diisi" 0ms
+ ✓ __tests__/skema.test.js > skemaBarang > stok 0 boleh (barang habis tetap tercatat) 0ms
+ ✓ __tests__/skema.test.js > buatSkemaPembayaran > tunai: uang kurang ditolak di kolom bayar 1ms
+ ✓ __tests__/skema.test.js > buatSkemaPembayaran > tunai: uang pas diterima 0ms
+ ✓ __tests__/skema.test.js > buatSkemaPembayaran > QRIS: kolom bayar boleh kosong 0ms
+ ✓ __tests__/skema.test.js > buatSkemaPembayaran > nama pelanggan lebih dari 50 karakter ditolak 0ms
+ ✓ __tests__/komponen.test.jsx > LabelStok > stok 0 menampilkan "Stok habis" 31ms
+ ✓ __tests__/komponen.test.jsx > LabelStok > stok 3 menampilkan "Menipis: 3" 3ms
+ ✓ __tests__/komponen.test.jsx > LabelStok > stok 48 menampilkan "Stok 48" 3ms
+ ✓ __tests__/komponen.test.jsx > Paginasi > tidak tampil jika hanya 1 halaman 2ms
+ ✓ __tests__/komponen.test.jsx > Paginasi > menandai halaman aktif dan menonaktifkan Sebelumnya di halaman 1 197ms
+ ✓ __tests__/komponen.test.jsx > Paginasi > memanggil onPindah dengan nomor halaman yang diklik 92ms
+ ✓ __tests__/komponen.test.jsx > Kasir: keranjang dan diskon > keranjang awal kosong dan tombol Pensil 2B (stok 0) nonaktif 61ms
+ ✓ __tests__/komponen.test.jsx > Kasir: keranjang dan diskon > menambah barang memperbarui total dan info diskon berikutnya 112ms
+ ✓ __tests__/komponen.test.jsx > Kasir: keranjang dan diskon > mengetik jumlah 14 sabun + 2 air memberi diskon 15% dan total Rp 185.300 315ms
+ ✓ __tests__/komponen.test.jsx > Kasir: keranjang dan diskon > tombol tambah nonaktif setelah jumlah mencapai stok (Pasta Gigi, stok 3) 124ms
+ ✓ __tests__/komponen.test.jsx > Kasir: keranjang dan diskon > menghapus barang dari keranjang 109ms
+ ✓ __tests__/komponen.test.jsx > FormPembayaran (React Hook Form + Zod) > menolak uang kurang dan tidak memanggil onBayar 209ms
+ ✓ __tests__/komponen.test.jsx > FormPembayaran (React Hook Form + Zod) > menampilkan kembalian dan mengirim data bertipe angka 250ms
+ ✓ __tests__/komponen.test.jsx > FormPembayaran (React Hook Form + Zod) > QRIS menyembunyikan kolom uang 81ms
+ ✓ __tests__/komponen.test.jsx > FormPembayaran (React Hook Form + Zod) > tombol Bayar nonaktif saat keranjang kosong 11ms
+ ✓ __tests__/komponen.test.jsx > Regresi: mengosongkan kolom jumlah > menghapus angka di kolom jumlah tidak menghapus baris keranjang 156ms
+
+ Test Files  8 passed (8)
+      Tests  130 passed (130)
+   Start at  14:04:39
+   Duration  11.03s (environment 68%, setup 25%, tests 3%, import 2%, transform 1%)
+

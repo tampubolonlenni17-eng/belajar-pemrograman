@@ -1,6 +1,21 @@
-// Data contoh. Mulai Pertemuan 14 data ini pindah ke MySQL.
+// lib/data-barang.js — data contoh. Mulai Pertemuan 14 data ini pindah ke MySQL.
+
+/**
+ * @typedef {object} Barang
+ * @property {number} id Nomor unik barang
+ * @property {string} kode Kode barang, pola AAA-000 (contoh ATK-001)
+ * @property {string} nama Nama barang
+ * @property {string} kategori Salah satu nilai KATEGORI
+ * @property {number} harga Harga jual dalam rupiah (bilangan bulat > 0)
+ * @property {number} stok Jumlah persediaan (bilangan bulat ≥ 0)
+ * @property {string} satuan Satuan jual: pcs, botol, bungkus, ...
+ */
+
+/** Daftar kategori yang boleh dipakai. */
 export const KATEGORI = ["Alat Tulis", "Makanan", "Minuman", "Kebersihan"];
 
+// Satu barang satu baris agar mudah dibaca seperti tabel; Prettier diminta tidak merapikannya.
+// prettier-ignore
 export const daftarBarang = [
   { id: 1, kode: "ATK-001", nama: "Buku Tulis 58 Lembar", kategori: "Alat Tulis", harga: 5000, stok: 120, satuan: "pcs" },
   { id: 2, kode: "ATK-002", nama: "Pensil 2B", kategori: "Alat Tulis", harga: 3000, stok: 0, satuan: "pcs" },

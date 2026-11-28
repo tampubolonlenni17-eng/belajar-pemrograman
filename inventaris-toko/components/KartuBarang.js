@@ -21,12 +21,15 @@ export default function KartuBarang({ barang }) {
         <h3 className="font-semibold">{nama}</h3>
       </div>
       <p className="mt-auto text-lg font-bold">
-        {formatRupiah(harga)}{" "}
-        <span className="text-sm font-normal text-slate-500">/ {satuan}</span>
+        {formatRupiah(harga)} <span className="text-sm font-normal text-slate-500">/ {satuan}</span>
       </p>
       <div className="flex gap-2 border-t border-slate-100 pt-3">
-        <Tombol varian="garis" ikon={Pencil}>Ubah</Tombol>
-        <Tombol varian="bahaya" ikon={Trash2}>Hapus</Tombol>
+        <Tombol varian="garis" ikon={Pencil}>
+          Ubah
+        </Tombol>
+        <Tombol varian="bahaya" ikon={Trash2}>
+          Hapus
+        </Tombol>
       </div>
     </article>
   );

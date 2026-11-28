@@ -26,7 +26,9 @@ export default function KontrolDaftar({ kueri, onUbah }) {
         >
           <option value="">Semua kategori</option>
           {KATEGORI.map((k) => (
-            <option key={k} value={k}>{k}</option>
+            <option key={k} value={k}>
+              {k}
+            </option>
           ))}
         </select>
       </label>
@@ -38,7 +40,9 @@ export default function KontrolDaftar({ kueri, onUbah }) {
           className="rounded-lg border border-slate-300 px-3 py-2"
         >
           {Object.entries(PILIHAN_URUT).map(([nilai, p]) => (
-            <option key={nilai} value={nilai}>{p.label}</option>
+            <option key={nilai} value={nilai}>
+              {p.label}
+            </option>
           ))}
         </select>
       </label>
@@ -50,7 +54,9 @@ export default function KontrolDaftar({ kueri, onUbah }) {
           className="rounded-lg border border-slate-300 px-3 py-2"
         >
           {[5, 10, 20].map((n) => (
-            <option key={n} value={n}>{n} per halaman</option>
+            <option key={n} value={n}>
+              {n} per halaman
+            </option>
           ))}
         </select>
       </label>

@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "coverage": "vitest run --coverage",
+    "format": "prettier --write .",
+    "format:cek": "prettier --check ."
   },
   "dependencies": {
     "@hookform/resolvers": "^7.0.9",
@@ -19,8 +24,18 @@
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^8.0.0",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.13",
+    "@vitejs/plugin-react": "^6.3.0",
+    "@vitest/coverage-v8": "^5.1.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
-    "tailwindcss": "4.3.3"
+    "eslint-plugin-jsdoc": "^63.3.3",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.10.1",
+    "tailwindcss": "4.3.3",
+    "vitest": "^5.1.2"
   }
 }

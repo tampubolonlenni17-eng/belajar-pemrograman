@@ -5,12 +5,7 @@ const GAYA = {
   netral: "bg-slate-200 text-slate-800 hover:bg-slate-300",
 };
 
-export default function Tombol({
-  children,
-  varian = "utama",
-  ikon: Ikon,
-  ...sisa
-}) {
+export default function Tombol({ children, varian = "utama", ikon: Ikon, ...sisa }) {
   return (
     <button
       type="button"

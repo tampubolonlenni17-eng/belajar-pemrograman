@@ -15,7 +15,9 @@ export default function JumlahKategori() {
   return (
     <ul className="mt-6 list-disc pl-6">
       {Object.entries(hitung).map(([k, n]) => (
-        <li key={k}>{k}: {n} barang</li>
+        <li key={k}>
+          {k}: {n} barang
+        </li>
       ))}
     </ul>
   );

@@ -10,9 +10,7 @@ export default function PilihBarang({ daftar }) {
   const { item, tambah } = useKeranjang();
 
   const k = kata.trim().toLowerCase();
-  const tampil = daftar.filter(
-    (b) => !k || b.nama.toLowerCase().includes(k) || b.kode.toLowerCase().includes(k)
-  );
+  const tampil = daftar.filter((b) => !k || b.nama.toLowerCase().includes(k) || b.kode.toLowerCase().includes(k));
 
   return (
     <div className="space-y-3">

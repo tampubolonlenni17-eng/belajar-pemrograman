@@ -28,8 +28,7 @@ export default function FormPembayaran({ total, nonaktif, onBayar }) {
     reset(AWAL);
   }
 
-  const kelas = (galat) =>
-    `w-full rounded-lg border px-3 py-2 ${galat ? "border-red-500" : "border-slate-300"}`;
+  const kelas = (galat) => `w-full rounded-lg border px-3 py-2 ${galat ? "border-red-500" : "border-slate-300"}`;
 
   return (
     <form
@@ -47,9 +46,7 @@ export default function FormPembayaran({ total, nonaktif, onBayar }) {
           className={kelas(errors.pelanggan)}
           aria-invalid={Boolean(errors.pelanggan)}
         />
-        {errors.pelanggan && (
-          <p className="text-sm text-red-700">{errors.pelanggan.message}</p>
-        )}
+        {errors.pelanggan && <p className="text-sm text-red-700">{errors.pelanggan.message}</p>}
       </div>
 
       <fieldset>

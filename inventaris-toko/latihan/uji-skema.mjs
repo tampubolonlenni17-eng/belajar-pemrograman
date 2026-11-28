@@ -1,9 +1,7 @@
 import { skemaBarang, buatSkemaPembayaran, galatPerKolom } from "../lib/skema.js";
 
 console.log(
-  galatPerKolom(
-    skemaBarang.safeParse({ kode: "atk-1", nama: "ab", kategori: "", harga: "", stok: "-1", satuan: " " })
-  )
+  galatPerKolom(skemaBarang.safeParse({ kode: "atk-1", nama: "ab", kategori: "", harga: "", stok: "-1", satuan: " " })),
 );
 
 console.log(
@@ -14,7 +12,7 @@ console.log(
     harga: "7000",
     stok: "10",
     satuan: "pcs",
-  }).data
+  }).data,
 );
 
 const sp = buatSkemaPembayaran(58500);

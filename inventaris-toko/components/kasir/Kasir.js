@@ -47,11 +47,7 @@ export default function Kasir({ barangAwal }) {
         </h2>
         <Keranjang />
         <RingkasanBelanja />
-        <FormPembayaran
-          total={ringkasan.total}
-          nonaktif={item.length === 0}
-          onBayar={bayar}
-        />
+        <FormPembayaran total={ringkasan.total} nonaktif={item.length === 0} onBayar={bayar} />
       </section>
     </div>
   );

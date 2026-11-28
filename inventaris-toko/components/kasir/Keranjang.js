@@ -1,8 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useKeranjang } from "@/context/KeranjangContext";
 import { formatRupiah } from "@/lib/format";
+
+/**
+ * Input jumlah yang boleh kosong sementara saat pengguna mengetik ulang.
+ * Tanpa ini, menghapus angka (nilai "") langsung mengirim jumlah 0 dan baris ikut terhapus.
+ */
+function InputJumlah({ item, onUbah }) {
+  const [teks, setTeks] = useState(null); // null = tampilkan jumlah dari keranjang
+
+  function ubah(e) {
+    const nilai = e.target.value;
+    if (nilai === "") {
+      setTeks(""); // biarkan kosong, jangan kirim ke reducer
+      return;
+    }
+    setTeks(null);
+    onUbah(item.id, nilai);
+  }
+
+  return (
+    <input
+      type="number"
+      min={1}
+      max={item.stok}
+      value={teks ?? item.jumlah}
+      onChange={ubah}
+      onBlur={() => setTeks(null)}
+      aria-label={`Jumlah ${item.nama}`}
+      className="w-14 rounded border border-slate-300 px-1 py-1 text-center"
+    />
+  );
+}
 
 export default function Keranjang() {
   const { item, ubahJumlah, hapus } = useKeranjang();
@@ -32,15 +64,7 @@ export default function Keranjang() {
           >
             <Minus size={14} aria-hidden="true" />
           </button>
-          <input
-            type="number"
-            min={1}
-            max={i.stok}
-            value={i.jumlah}
-            onChange={(e) => ubahJumlah(i.id, e.target.value)}
-            aria-label={`Jumlah ${i.nama}`}
-            className="w-14 rounded border border-slate-300 px-1 py-1 text-center"
-          />
+          <InputJumlah item={i} onUbah={ubahJumlah} />
           <button
             onClick={() => ubahJumlah(i.id, i.jumlah + 1)}
             disabled={i.jumlah >= i.stok}

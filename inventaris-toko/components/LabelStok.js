@@ -10,11 +10,7 @@ export default function LabelStok({ stok }) {
   const status = statusStok(stok);
   return (
     <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${WARNA[status]}`}>
-      {status === "habis"
-        ? "Stok habis"
-        : status === "menipis"
-        ? `Menipis: ${stok}`
-        : `Stok ${stok}`}
+      {status === "habis" ? "Stok habis" : status === "menipis" ? `Menipis: ${stok}` : `Stok ${stok}`}
     </span>
   );
 }
